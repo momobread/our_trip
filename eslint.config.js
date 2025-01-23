@@ -2,19 +2,16 @@ import js from '@eslint/js';
 import globals from 'globals';
 import reactHooks from 'eslint-plugin-react-hooks';
 import reactRefresh from 'eslint-plugin-react-refresh';
-import tseslint from 'typescript-eslint';
+import tseslint from '@typescript-eslint/eslint-plugin';
 import tsParser from '@typescript-eslint/parser';
+import prettier from 'eslint-plugin-prettier';
+import importPlugin from 'eslint-plugin-import';
 
-export default tseslint.config(
-  { ignores: ['dist', 'node_modules'] },
+export default [
   {
-    extends: [
-      js.configs.recommended,
-      ...tseslint.configs.recommended,
-      'plugin:react/recommended',
-      'plugin:react-hooks/recommended',
-      'plugin:prettier/recommended',
-    ],
+    ignores: ['dist', 'node_modules'],
+  },
+  {
     files: ['**/*.{ts,tsx}'],
     languageOptions: {
       parser: tsParser,
@@ -27,17 +24,23 @@ export default tseslint.config(
       'react-refresh': reactRefresh,
       '@typescript-eslint': tseslint,
       prettier,
+      import: importPlugin,
     },
     rules: {
-      ...reactHooks.configs.recommended.rules,
+      // React Hooks
+      'react-hooks/rules-of-hooks': 'error',
+      'react-hooks/exhaustive-deps': 'warn',
       'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
+
+      // Prettier
       'prettier/prettier': 'error',
 
-      // js
+      // JS Rules
       eqeqeq: ['error', 'always'],
       'no-console': ['warn', { allow: ['warn', 'error'] }],
 
-      //ts
+      // TypeScript Rules
+      '@typescript-eslint/array-type': ['error', { default: 'array-simple' }],
       '@typescript-eslint/no-explicit-any': 'warn',
       '@typescript-eslint/no-unused-vars': [
         'warn',
@@ -46,7 +49,7 @@ export default tseslint.config(
       '@typescript-eslint/explicit-function-return-type': 'warn',
       '@typescript-eslint/consistent-type-imports': ['error', { prefer: 'type-imports' }],
 
-      //etc
+      // Import Order
       'import/order': [
         'error',
         {
@@ -54,8 +57,10 @@ export default tseslint.config(
           'newlines-between': 'always',
         },
       ],
+
+      // Miscellaneous
       'prefer-const': 'error',
       'no-shadow': 'error',
     },
-  }
-);
+  },
+];
