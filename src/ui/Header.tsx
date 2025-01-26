@@ -6,19 +6,16 @@ import Navigation from './Navigation';
 
 const StyledHeader = styled.header`
   padding: 1rem 0;
-  border-bottom: 1px solid black;
   /* background-color: var(--primary-900); */
-  background-image: url('./bg.jpeg');
+  background-image: url('./bg2.jpg');
   background-size: cover;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   #header_main {
     /* background-color: aqua; */
   }
   #title {
-    margin-top: 7rem;
     font-size: 5rem;
     font-weight: 500;
     color: #fff;

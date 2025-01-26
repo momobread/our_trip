@@ -1,32 +1,42 @@
 import styled from 'styled-components';
+import { type ReactNode } from 'react';
 
-import PopularCard from '../PopularCard';
-
-const StyledPopularLocation = styled.div`
-  padding: 2rem 4rem;
+const StyledPopularLocation = styled.section`
+  width: 100vw;
+  display: flex;
+  justify-content: center;
   .popular_lo_title {
     font-size: 2rem;
     font-weight: 500;
+    margin-bottom: 2rem;
+  }
+  #popular_lo_content {
+    width: 170rem;
+    padding: 1rem 5rem;
   }
   #popular_lo_card {
     ul {
       display: flex;
-      gap: 2rem;
+      gap: 2.5rem;
+      justify-content: center;
     }
   }
 `;
 
-const PopularLocation = (): JSX.Element => {
+interface PopularLocationProps {
+  title: string;
+  render?: ReactNode;
+}
+
+const PopularLocation = ({ title, render }: PopularLocationProps): JSX.Element => {
+  // const data = usePreImg();
   return (
     <StyledPopularLocation>
-      <div className="popular_lo_title">인기있는 여행지</div>
-      <div id="popular_lo_card">
-        <ul>
-          <PopularCard />
-          <PopularCard />
-          <PopularCard />
-          <PopularCard />
-        </ul>
+      <div id="popular_lo_content">
+        <div className="popular_lo_title">{title}</div>
+        <div id="popular_lo_card">
+          <ul>{render}</ul>
+        </div>
       </div>
     </StyledPopularLocation>
   );

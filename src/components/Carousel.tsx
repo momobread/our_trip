@@ -5,7 +5,7 @@ const StyledCarousel = styled.div`
   position: relative;
   overflow: hidden;
   width: 100%;
-  max-width: 70%;
+  max-width: 100%;
 
   margin: 0 auto;
   .carousel-track {
@@ -17,13 +17,13 @@ const StyledCarousel = styled.div`
     flex-shrink: 0;
     /* flex: 0 0 100%; */
     width: 100%; //이래야지 부모크기만큼 따라감
-    height: 60rem;
+    height: 80rem;
     display: flex;
     align-items: center;
     justify-content: center;
     user-select: none;
     img {
-      height: 60rem;
+      height: 80rem;
       width: 100%;
     }
   }
@@ -74,6 +74,7 @@ const Carousel = () => {
         {slides.map((src) => (
           <div
             className="carousel-slide"
+            key={src}
             style={{ transform: `translateX(-${currentIndex * 100}%)` }}
           >
             <img src={src} />

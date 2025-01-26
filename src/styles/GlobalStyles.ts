@@ -10,6 +10,10 @@ const GlobalStyles = createGlobalStyle`
   --primary-400 :#394867;
   --primary-300:#535C91;
 
+  --accent-200 :#E0FBE2;
+  --accent-300 :#D3F1DF;
+  --accent-500 :#85A98F;
+
   
   /* main_blue */
     
