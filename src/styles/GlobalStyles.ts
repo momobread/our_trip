@@ -2,17 +2,14 @@ import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyles = createGlobalStyle`
 :root{
-    --color-accent_pink: rgb(252, 171, 166);
-  --color-accent_yellow: rgb(255, 215, 130);
-  --color-accent_purple: rgb(174, 154, 247);
-  --color-accent_green: rgb(146, 248, 214);
-  --color-accent_blue: #98E4FF;
-  --color-accent_blue2 : #DFF5FF;
-  --color-accent_blue3 : #0F1035;
-  --color-accent_blue4 : #80B3FF;
-  --color-accent_blue5 : #365486;
-  --color-accent_blue6 : #D9EAFD;
-  --color-accent_blue7: #b1f0f7;
+  --primary-900 :#000000;
+  --primary-800 : #111827;
+  --primary-700 : #18212f;
+  --primary-600 : #1f2937;
+  --primary-500 :  #374151;
+  --primary-400 :#394867;
+  --primary-300:#535C91;
+
   
   /* main_blue */
     
