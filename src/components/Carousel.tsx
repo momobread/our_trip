@@ -45,13 +45,13 @@ const StyledCarousel = styled.div`
     z-index: 10;
   }
   #left {
-    left: 10px;
+    left: 1%;
   }
   #right {
-    right: 10px;
+    right: 1%;
   }
 `;
-const Carousel = () => {
+const Carousel = (): JSX.Element => {
   const slides = ['/slide/city.jpg', '/slide/dubai.jpg', '/slide/japan.jpg', '/slide/winter.jpg'];
   const [currentIndex, setCurrenIndex] = useState<number>(0);
   useEffect(() => {

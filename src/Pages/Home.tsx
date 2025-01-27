@@ -9,6 +9,7 @@ import EventPrivew from '../components/Home/EventPrivew';
 
 //width : 170rem,min-width : 150rem ,padding 1rem 5rem
 const StyledHome = styled.div`
+  width: 100vw;
   height: 300rem;
   display: flex;
   flex-direction: column;
@@ -17,7 +18,13 @@ const StyledHome = styled.div`
 `;
 
 const Home = (): JSX.Element => {
-  const location = usePreImg();
+  const datas = usePreImg();
+  console.log(datas);
+  const po_location = datas?.popular_location?.location;
+  const best_hotel = datas?.popular_accommodation?.best;
+  const hot_hotel = datas?.hot_hotel.hot;
+  const po_activity = datas?.popular_activity.activity;
+
   const slides = [
     '/slide/city.jpg',
     '/slide/dubai.jpg',
@@ -31,23 +38,27 @@ const Home = (): JSX.Element => {
       <Carousel />
       <PopularLocation
         title="인기 숙소 추천"
-        render={slides?.map((popular) => (
+        render={best_hotel?.map((popular) => (
           <PopularCard img={popular.url} title={popular.title} height="middle" />
         ))}
       />
       <PopularLocation
         title="hot한 호텔"
-        render={slides?.map((popular) => (
+        render={hot_hotel?.map((popular) => (
           <PopularCard img={popular.url} title={popular.title} height="middle" />
         ))}
       />
       <PopularLocation
         title="인기있는 지역"
-        render={location?.map((popular) => <PopularCard img={popular.url} title={popular.title} />)}
+        render={po_location?.map((popular) => (
+          <PopularCard img={popular.url} title={popular.title} />
+        ))}
       />
       <PopularLocation
         title="많이찾는 액티비티"
-        render={location?.map((popular) => <PopularCard img={popular.url} title={popular.title} />)}
+        render={po_activity?.map((popular) => (
+          <PopularCard img={popular.url} title={popular.title} />
+        ))}
       />
       <EventPrivew />
     </StyledHome>

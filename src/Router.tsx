@@ -10,6 +10,11 @@ const Router = (): ReactNode => {
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
+          <Route path="/hotel" element={<Home />} />
+          <Route path="/motel" element={<Home />} />
+          <Route path="/guest" element={<Home />} />
+          <Route path="/leisure" element={<Home />} />
+          <Route path="/activity" element={<Home />} />
         </Route>
       </Routes>
     </BrowserRouter>

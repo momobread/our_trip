@@ -1,10 +1,10 @@
 import { useQuery } from '@tanstack/react-query';
 
 import { fetchPreImg } from '../service/preImgApi';
-import { type popularLoType } from '../types/Main';
+import { type preDataType } from '../types/Main';
 
-const usePreImg = (): popularLoType[] | undefined => {
-  const { data } = useQuery<popularLoType[], Error>({
+const usePreImg = (): preDataType | undefined => {
+  const { data } = useQuery<preDataType, Error>({
     queryKey: ['main_pre_img'],
     queryFn: fetchPreImg,
   });

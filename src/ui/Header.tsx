@@ -2,6 +2,7 @@ import { type ReactNode } from 'react';
 import styled from 'styled-components';
 
 import Navigation from './Navigation';
+import { useNavigate } from 'react-router';
 // import Menu from './Menu';
 
 const StyledHeader = styled.header`
@@ -30,11 +31,15 @@ const StyledHeader = styled.header`
     font-size: 2.5rem;
     color: #fff;
   }
+  &:hover {
+    cursor: pointer;
+  }
 `;
 const Header = ({ children }: { children: ReactNode }): JSX.Element => {
+  const navigate = useNavigate();
   return (
     <StyledHeader>
-      <div id="header_main">
+      <div id="header_main" onClick={() => navigate('/')}>
         <div id="title">{children}</div>
       </div>
       {/* <span id="s_title">life sis beautiful.Don't hesitate.</span> */}
