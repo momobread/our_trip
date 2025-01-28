@@ -5,7 +5,7 @@ import { HiMiniGlobeAlt, HiBuildingOffice2, HiMiniCake } from 'react-icons/hi2';
 
 const StyledMenu = styled.ul`
   display: flex;
-  padding-top: 3rem;
+  padding-top: 5rem;
   justify-content: center;
   gap: 5rem;
 

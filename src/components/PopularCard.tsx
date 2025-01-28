@@ -5,7 +5,6 @@ interface StyledPopularCardProps {
 }
 
 const StyledPopularCard = styled.li<StyledPopularCardProps>`
-  border: 1px solid #000000;
   width: 25rem;
   height: 30rem;
   border-radius: 0.7rem;
@@ -13,6 +12,7 @@ const StyledPopularCard = styled.li<StyledPopularCardProps>`
     border-radius: inherit;
     width: inherit;
     height: 25rem;
+    opacity: 0.9;
   }
   span {
     font-size: 2rem;
@@ -22,11 +22,11 @@ const StyledPopularCard = styled.li<StyledPopularCardProps>`
     props.height === 'middle'
       ? css`
           & {
-            height: 40rem;
+            height: 42rem;
             width: 30rem;
           }
           img {
-            height: 35rem;
+            height: 37rem;
             width: 30rem;
           }
         `

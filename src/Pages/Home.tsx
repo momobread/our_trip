@@ -13,7 +13,7 @@ const StyledHome = styled.div`
   height: 300rem;
   display: flex;
   flex-direction: column;
-  gap: 3rem;
+  gap: 5rem;
   margin-bottom: 10rem;
 `;
 
