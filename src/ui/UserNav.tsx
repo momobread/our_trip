@@ -10,7 +10,7 @@ const StyledNavigation = styled.nav`
   grid-template-columns: 1fr 1fr 1fr;
 `;
 
-const Navigation = () => {
+const UserNav = () => {
   return (
     <StyledNavigation>
       <li>로그인</li>
@@ -19,4 +19,4 @@ const Navigation = () => {
     </StyledNavigation>
   );
 };
-export default Navigation;
+export default UserNav;

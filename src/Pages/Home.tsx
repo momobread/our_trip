@@ -34,7 +34,6 @@ const Home = (): JSX.Element => {
   ];
   return (
     <StyledHome>
-      <Menu />
       <Carousel />
       <PopularLocation
         title="인기 숙소 추천"

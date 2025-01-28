@@ -1,8 +1,8 @@
 import { type ReactNode } from 'react';
+import { useNavigate } from 'react-router';
 import styled from 'styled-components';
 
-import Navigation from './Navigation';
-import { useNavigate } from 'react-router';
+import UserNav from './UserNav';
 // import Menu from './Menu';
 
 const StyledHeader = styled.header`
@@ -43,7 +43,7 @@ const Header = ({ children }: { children: ReactNode }): JSX.Element => {
         <div id="title">{children}</div>
       </div>
       {/* <span id="s_title">life sis beautiful.Don't hesitate.</span> */}
-      <Navigation />
+      <UserNav />
     </StyledHeader>
   );
 };

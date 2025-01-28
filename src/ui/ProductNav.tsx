@@ -5,8 +5,8 @@ import { HiMiniGlobeAlt, HiBuildingOffice2, HiMiniCake } from 'react-icons/hi2';
 
 const StyledMenu = styled.ul`
   display: flex;
-  padding-top: 5rem;
   justify-content: center;
+  align-items: center;
   gap: 5rem;
 
   font-size: 2rem;
@@ -24,7 +24,7 @@ const StyledMenu = styled.ul`
   }
 `;
 
-const Menu = (): JSX.Element => {
+const ProductNav = (): JSX.Element => {
   return (
     <StyledMenu>
       <NavLink to="/motel">
@@ -60,4 +60,4 @@ const Menu = (): JSX.Element => {
     </StyledMenu>
   );
 };
-export default Menu;
+export default ProductNav;
